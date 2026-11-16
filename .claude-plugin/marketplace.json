@@ -1,0 +1,16 @@
+{
+  "name": "mcp-mux",
+  "owner": {
+    "name": "potatoespotato"
+  },
+  "plugins": [
+    {
+      "name": "lsp-mux",
+      "source": "./plugins/lsp-mux",
+      "description": "TypeScript (tsgo), Python (pyright), Rust (rust-analyzer) and C/C++ (clangd) language servers shared across Claude Code sessions through mcpmux"
+    }
+  ],
+  "metadata": {
+    "description": "Language servers shared across Claude Code sessions through mcp-mux"
+  }
+}

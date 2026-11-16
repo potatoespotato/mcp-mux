@@ -1,0 +1,33 @@
+[package]
+name = "mcpmux"
+version = "0.2.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/potatoespotato/mcp-mux"
+description = "Share one stdio MCP/LSP backend across many clients: per-session shim + daemon"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "mcpmux-shim"
+path = "src/bin/mcpmux-shim.rs"
+
+[[bin]]
+name = "mcpmux"
+path = "src/bin/mcpmux.rs"
+
+[[bin]]
+name = "mcpmuxd"
+path = "src/bin/mcpmuxd/main.rs"
+
+[dependencies]
+serde_json = "1"
+tokio = { version = "1", features = ["rt", "net", "io-util", "process", "sync", "signal", "time", "macros"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

@@ -1,0 +1,28 @@
+{
+  "typescript": {
+    "command": "mcpmux-shim",
+    "args": ["--name", "lsp-tsgo", "--proto", "lsp", "--cwd-scoped", "--idle", "600", "--", "tsgo", "--lsp", "-stdio"],
+    "extensionToLanguage": {
+      ".ts": "typescript", ".tsx": "typescriptreact", ".mts": "typescript", ".cts": "typescript",
+      ".js": "javascript", ".jsx": "javascriptreact", ".mjs": "javascript", ".cjs": "javascript"
+    }
+  },
+  "pyright": {
+    "command": "mcpmux-shim",
+    "args": ["--name", "lsp-pyright", "--proto", "lsp", "--cwd-scoped", "--idle", "600", "--", "pyright-langserver", "--stdio"],
+    "extensionToLanguage": {".py": "python", ".pyi": "python"}
+  },
+  "rust-analyzer": {
+    "command": "mcpmux-shim",
+    "args": ["--name", "lsp-rust-analyzer", "--proto", "lsp", "--cwd-scoped", "--idle", "600", "--", "rust-analyzer"],
+    "extensionToLanguage": {".rs": "rust"}
+  },
+  "clangd": {
+    "command": "mcpmux-shim",
+    "args": ["--name", "lsp-clangd", "--proto", "lsp", "--cwd-scoped", "--idle", "600", "--", "clangd", "--background-index"],
+    "extensionToLanguage": {
+      ".c": "c", ".h": "c", ".cpp": "cpp", ".cc": "cpp", ".cxx": "cpp",
+      ".hpp": "cpp", ".hxx": "cpp", ".C": "cpp", ".H": "cpp"
+    }
+  }
+}
